@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import React, { useEffect, useRef } from 'react';
 import './App.css';
+import Button from '@material-ui/core/Button';
+import Lottie from 'lottie-web';
 
 function App() {
+
+  const container = useRef(null)
+
+  useEffect(() => {
+    Lottie.loadAnimation({
+      container: container.current,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: require('./images/hello.json')
+    })
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container" ref={container}></div>
+      <div className="heading-wrapper"><h1 className="lms-heading">Holla From Unicus!!</h1>
+        <Button onClick={() => alert('You Clicked Me')}  color="primary" variant="contained">Click Me</Button>
+      </div>
     </div>
   );
 }

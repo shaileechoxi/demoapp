@@ -7,6 +7,15 @@
   pointer-events: none;
 }
 
+.container {
+  display: inline-block;
+  vertical-align: middle;
+}
+.heading-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
