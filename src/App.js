@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './App.css';
 import Button from '@material-ui/core/Button';
-import Lottie from 'lottie-react-web'
 import Lottie from 'lottie-web';
 
 function App() {
